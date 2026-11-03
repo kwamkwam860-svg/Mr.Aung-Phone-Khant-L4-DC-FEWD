@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bean Boutique - Special Offers</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-[#12100e] text-stone-200">
+
+<header class="border-b border-white/10 bg-[#12100e]/90 backdrop-blur-md sticky top-0 z-50">
+  <div class="max-w-6xl mx-auto px-6 py-2.5 flex items-center justify-between">
+    <a href="index.html" class="brand-logo text-xl font-serif text-stone-100 font-bold">Bean <span class="text-[#d97706]">Boutique</span></a>
+    
+    <!-- Desktop Navigation -->
+    <nav class="hidden md:flex items-center space-x-6 text-sm">
+      <a href="index.html" class="text-stone-400 hover:text-stone-200 transition-colors">Home</a>
+      <a href="menu.html" class="text-stone-400 hover:text-stone-200 transition-colors">Menu</a>
+      <a href="equipment.html" class="text-stone-400 hover:text-stone-200 transition-colors">Equipment</a>
+      <a href="offers.html" class="text-[#d97706] font-semibold">Offers</a>
+      <a href="location.html" class="text-stone-400 hover:text-stone-200 transition-colors">Locations</a>
+      <a href="checkout.html" class="text-stone-400 hover:text-stone-200 transition-colors">Payment</a>
+      <a href="contact.html" class="text-stone-400 hover:text-stone-200 transition-colors">Contact Us</a>
+      <a href="events.html" class="text-stone-400 hover:text-stone-200 transition-colors">Events</a>
+    </nav>
+
+    <!-- Header Actions (Cart & Mobile Menu Button) -->
+    <div class="flex items-center gap-4">
+      <button id="open-cart-btn" class="relative p-2 text-stone-300 hover:text-white transition-colors" aria-label="Open Cart">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
+        </svg>
+        <span id="cart-badge" class="absolute -top-1 -right-1 bg-[#d97706] text-stone-950 font-bold text-xs w-5 h-5 rounded-full flex items-center justify-center">0</span>
+      </button>
+
+      <!-- Mobile Hamburger Button -->
+      <button id="mobile-menu-btn" class="md:hidden p-2 text-stone-300 hover:text-white focus:outline-none" aria-label="Toggle Menu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Dropdown Menu -->
+  <div id="mobile-menu" class="hidden md:hidden bg-[#1c1917] border-b border-white/10 px-6 py-4 space-y-3">
+    <a href="index.html" class="block text-stone-300 hover:text-[#d97706] text-sm py-1">Home</a>
+    <a href="menu.html" class="block text-stone-300 hover:text-[#d97706] text-sm py-1">Menu</a>
+    <a href="equipment.html" class="block text-stone-300 hover:text-[#d97706] text-sm py-1">Equipment</a>
+    <a href="offers.html" class="block text-[#d97706] font-semibold text-sm py-1">Offers</a>
+    <a href="location.html" class="block text-stone-300 hover:text-[#d97706] text-sm py-1">Locations</a>
+    <a href="checkout.html" class="block text-stone-300 hover:text-[#d97706] text-sm py-1">Payment</a>
+    <a href="contact.html" class="block text-stone-300 hover:text-[#d97706] text-sm py-1">Contact Us</a>
+    <a href="events.html" class="block text-stone-300 hover:text-[#d97706] text-sm py-1">Events</a>
+  </div>
+</header>
+
+<main>
+  <!-- Hero Section -->
+  <section class="story-hero text-center py-16 px-6 max-w-4xl mx-auto">
+    <div class="subtitle text-[#d97706] text-xs uppercase tracking-widest font-semibold mb-2">Exclusive Deals</div>
+    <h1 class="text-3xl md:text-5xl font-serif font-bold text-stone-100 mb-4">Special Offers &amp; Bundles</h1>
+    <p class="text-stone-400 text-sm md:text-base leading-relaxed">Save on curated single-origin bundles, starter brew kits, and monthly subscription boxes delivered straight to your door.</p>
+  </section>
+
+  <!-- Offers Grid Section -->
+  <section class="max-w-6xl mx-auto px-6 pb-20">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      
+      <!-- Offer Card 1 -->
+      <div class="bg-[#1c1917] border border-white/10 p-6 flex flex-col justify-between hover:border-[#d97706]/50 transition-colors">
+        <div>
+          <span class="inline-block bg-[#d97706]/20 text-[#d97706] text-xs font-bold px-2.5 py-1 mb-4 uppercase tracking-wider">Save 20%</span>
+          <img src="images/Coffee%20beans%20roasting.png" alt="Single Origin Tasting Flight" class="w-full h-48 object-cover border border-white/5 mb-6">
+          <h2 class="font-serif text-xl font-bold text-stone-100 mb-2">Tasting Flight Trio</h2>
+          <p class="text-xs text-[#d97706] font-semibold mb-3">3x 250g Whole Bean Bags</p>
+          <p class="text-stone-400 text-sm leading-relaxed mb-6">Includes Ethiopia Yirgacheffe, Colombia Supremo, and Sumatra Mandheling at a special bundled rate.</p>
+        </div>
+        <div>
+          <div class="flex items-baseline gap-2 mb-4">
+            <span class="text-lg font-bold text-stone-200">$38.00</span>
+            <span class="text-xs text-stone-500 line-through">$48.00</span>
+          </div>
+          <button class="add-to-cart-btn w-full bg-[#d97706] hover:bg-[#b45309] text-stone-950 font-bold py-2.5 text-sm transition-colors uppercase tracking-wider" data-title="Tasting Flight Trio" data-price="38.00">
+            Add Bundle to Cart
+          </button>
+        </div>
+      </div>
+
+      <!-- Offer Card 2 -->
+      <div class="bg-[#1c1917] border border-white/10 p-6 flex flex-col justify-between hover:border-[#d97706]/50 transition-colors">
+        <div>
+          <span class="inline-block bg-[#d97706]/20 text-[#d97706] text-xs font-bold px-2.5 py-1 mb-4 uppercase tracking-wider">Best Value</span>
+          <img src="images/Pourover%20coffee%20brewing.png" alt="Pour Over Starter Kit" class="w-full h-48 object-cover border border-white/5 mb-6">
+          <h2 class="font-serif text-xl font-bold text-stone-100 mb-2">Pour-Over Starter Kit</h2>
+          <p class="text-xs text-[#d97706] font-semibold mb-3">V60 Dripper + 250g Roast + Filters</p>
+          <p class="text-stone-400 text-sm leading-relaxed mb-6">Everything you need to begin manual drip brewing: ceramic V60 dripper, 100 filters, and fresh house roast.</p>
+        </div>
+        <div>
+          <div class="flex items-baseline gap-2 mb-4">
+            <span class="text-lg font-bold text-stone-200">$32.00</span>
+            <span class="text-xs text-stone-500 line-through">$42.00</span>
+          </div>
+          <button class="add-to-cart-btn w-full bg-[#d97706] hover:bg-[#b45309] text-stone-950 font-bold py-2.5 text-sm transition-colors uppercase tracking-wider" data-title="Pour-Over Starter Kit" data-price="32.00">
+            Add Kit to Cart
+          </button>
+        </div>
+      </div>
+
+      <!-- Offer Card 3 -->
+      <div class="bg-[#1c1917] border border-white/10 p-6 flex flex-col justify-between hover:border-[#d97706]/50 transition-colors">
+        <div>
+          <span class="inline-block bg-[#d97706]/20 text-[#d97706] text-xs font-bold px-2.5 py-1 mb-4 uppercase tracking-wider">Subscriber Special</span>
+          <img src="images/Barista%20pouring%20artisanal%20coffee.png" alt="Monthly Roast Subscription" class="w-full h-48 object-cover border border-white/5 mb-6">
+          <h2 class="font-serif text-xl font-bold text-stone-100 mb-2">Monthly Roaster's Choice</h2>
+          <p class="text-xs text-[#d97706] font-semibold mb-3">Fresh Bag Delivered Monthly</p>
+          <p class="text-stone-400 text-sm leading-relaxed mb-6">Get our head roaster's newest seasonal bean selection shipped directly to your door with free shipping.</p>
+        </div>
+        <div>
+          <div class="flex items-baseline gap-2 mb-4">
+            <span class="text-lg font-bold text-stone-200">$18.00 / mo</span>
+            <span class="text-xs text-stone-500 line-through">$22.00</span>
+          </div>
+          <button class="add-to-cart-btn w-full bg-[#d97706] hover:bg-[#b45309] text-stone-950 font-bold py-2.5 text-sm transition-colors uppercase tracking-wider" data-title="Monthly Roaster's Choice" data-price="18.00">
+            Subscribe Now
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</main>
+
+  <!-- Cart Drawer Overlay -->
+  <div id="cart-drawer" class="fixed inset-0 bg-black/60 z-50 hidden flex justify-end transition-opacity">
+    <div class="w-full max-w-md bg-[#1c1917] h-full p-6 flex flex-col justify-between border-l border-white/10">
+      
+      <!-- Drawer Header -->
+      <div class="flex items-center justify-between border-b border-white/10 pb-4">
+        <h2 class="text-lg font-serif font-bold text-stone-100">Your Shopping Cart</h2>
+        <button id="close-cart-btn" class="text-stone-400 hover:text-white text-xl font-bold">&times;</button>
+      </div>
+
+      <!-- Cart Items List Container -->
+      <div id="cart-items-container" class="flex-1 overflow-y-auto my-4 space-y-4">
+        <!-- Dynamic cart items render here -->
+      </div>
+
+      <!-- Order Summary Footer -->
+      <div class="border-t border-white/10 pt-4 space-y-3">
+        <div class="flex justify-between text-sm text-stone-400">
+          <span>Subtotal</span>
+          <span id="drawer-subtotal" class="font-bold text-stone-200">$0.00</span>
+        </div>
+        <div class="flex justify-between text-sm text-stone-400">
+          <span>Shipping</span>
+          <span class="font-bold text-stone-200">$5.00</span>
+        </div>
+        <div class="flex justify-between text-base font-bold text-stone-100 pt-2 border-t border-white/5">
+          <span>Grand Total</span>
+          <span id="drawer-grand-total" class="text-[#d97706]">$0.00</span>
+        </div>
+
+        <a href="checkout.html" class="block text-center w-full bg-[#d97706] hover:bg-[#b45309] text-stone-950 font-bold py-3 text-sm transition-colors uppercase tracking-wider mt-4">
+          Proceed to Checkout
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="border-t border-white/10 py-6 text-center text-xs text-stone-500">
+    <p>&copy; 2026 Bean Boutique Coffee Roasters. All rights reserved.</p>
+  </footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bean Boutique - Coffee & Bakery</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-[#12100e] text-stone-200">
+
+<header class="border-b border-white/10 bg-[#12100e]/90 backdrop-blur-md sticky top-0 z-50">
+  <div class="max-w-6xl mx-auto px-6 py-2.5 flex items-center justify-between">
+    <a href="index.html" class="brand-logo text-xl font-serif text-stone-100 font-bold">Bean <span class="text-[#d97706]">Boutique</span></a>
+    
+    <!-- Desktop Navigation -->
+    <nav class="hidden md:flex items-center space-x-6 text-sm">
+      <a href="index.html" class="text-[#d97706] font-semibold">Home</a>
+      <a href="menu.html" class="text-stone-400 hover:text-stone-200 transition-colors">Menu</a>
+      <a href="equipment.html" class="text-stone-400 hover:text-stone-200 transition-colors">Equipment</a>
+      <a href="offers.html" class="text-stone-400 hover:text-stone-200 transition-colors">Offers</a>
+      <a href="location.html" class="text-stone-400 hover:text-stone-200 transition-colors">Locations</a>
+      <a href="checkout.html" class="text-stone-400 hover:text-stone-200 transition-colors">Payment</a>
+      <a href="contact.html" class="text-stone-400 hover:text-stone-200 transition-colors">Contact Us</a>
+      <a href="events.html" class="text-stone-400 hover:text-stone-200 transition-colors">Events</a>
+    </nav>
+
+    <!-- Header Actions (Cart & Mobile Menu Button) -->
+    <div class="flex items-center gap-4">
+      <button id="open-cart-btn" class="relative p-2 text-stone-300 hover:text-white transition-colors" aria-label="Open Cart">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
+        </svg>
+        <span id="cart-badge" class="absolute -top-1 -right-1 bg-[#d97706] text-stone-950 font-bold text-xs w-5 h-5 rounded-full flex items-center justify-center">0</span>
+      </button>
+
+      <!-- Mobile Hamburger Button -->
+      <button id="mobile-menu-btn" class="md:hidden p-2 text-stone-300 hover:text-white focus:outline-none" aria-label="Toggle Menu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Dropdown Menu -->
+  <div id="mobile-menu" class="hidden md:hidden bg-[#1c1917] border-b border-white/10 px-6 py-4 space-y-3">
+    <a href="index.html" class="block text-[#d97706] font-semibold text-sm py-1">Home</a>
+    <a href="menu.html" class="block text-stone-300 hover:text-[#d97706] text-sm py-1">Menu</a>
+    <a href="equipment.html" class="block text-stone-300 hover:text-[#d97706] text-sm py-1">Equipment</a>
+    <a href="offers.html" class="block text-stone-300 hover:text-[#d97706] text-sm py-1">Offers</a>
+    <a href="location.html" class="block text-stone-300 hover:text-[#d97706] text-sm py-1">Locations</a>
+    <a href="checkout.html" class="block text-stone-300 hover:text-[#d97706] text-sm py-1">Payment</a>
+    <a href="contact.html" class="block text-stone-300 hover:text-[#d97706] text-sm py-1">Contact Us</a>
+    <a href="events.html" class="block text-stone-300 hover:text-[#d97706] text-sm py-1">Events</a>
+  </div>
+</header>
+
+<main>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Crafted coffee, brewed with intention.</h1>
+      <p>Ethically sourced single-origin beans roasted in-house daily. Experience coffee elevated to its purest form.</p>
+    </div>
+    <div class="hero-image-wrapper">
+      <img class="hero-image" src="images/Barista%20pouring%20artisanal%20coffee.png" alt="Barista pouring artisanal coffee">
+    </div>
+  </section>
+
+  <!-- Story Section -->
+  <section class="story-hero">
+    <div class="subtitle">Our Story &amp; Craft</div>
+    <h2>Crafted with intention, poured with purpose.</h2>
+    <p>We believe coffee is more than a morning routine—it is a daily ritual of pause, presence, and appreciation for fine craft.</p>
+  </section>
+
+  <!-- Image Grid Section -->
+  <section class="image-grid">
+    <h2 class="sr-only">Brewing and Roasting Craft</h2>
+    <img src="images/Pourover%20coffee%20brewing.png" alt="Pourover coffee brewing">
+    <img src="images/Coffee%20beans%20roasting.png" alt="Coffee beans roasting">
+  </section>
+
+  <!-- Pillars Section -->
+  <section class="pillars">
+    <h2 class="sr-only">Our Core Pillars</h2>
+    <div class="pillars-container">
+      <div class="pillar-card">
+        <h2>01. Direct Sourcing</h2>
+        <p>We partner directly with smallholder coffee cooperatives across East Africa and South America. By compensating above market standards, we ensure farm sustainability and preserve heirloom bean genetics.</p>
+      </div>
+
+      <div class="pillar-card">
+        <h2>02. Master Micro-Roasting</h2>
+        <p>Every batch is roasted in small, dedicated lots using precise convection roast profiles. We highlight natural fruit acids, subtle floral aromas, and rich cocoa finishes without ever over-roasting.</p>
+      </div>
+
+      <div class="pillar-card">
+        <h2>03. Mindful Sanctuary</h2>
+        <p>Our coffee bar is intentionally designed as an architectural sanctuary. Warm natural wood, acoustic softening, and uncluttered surfaces provide a calm space to start your day.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quote Section -->
+  <section class="quote-section">
+    <h2 class="sr-only">Founder Quote</h2>
+    <blockquote>"Great coffee isn't engineered in a laboratory. It is cultivated by passionate farmers and honored by baristas who care."</blockquote>
+    <div class="quote-author">— Head Roaster &amp; Founder</div>
+  </section>
+</main>
+
+<!-- Footer -->
+<footer class="border-t border-white/10 py-6 text-center text-xs text-stone-500">
+  <p>&copy; 2026 Bean Boutique Coffee Roasters. All rights reserved.</p>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

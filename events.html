@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Events & Workshops - Bean Boutique</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-[#12100e] text-stone-200 min-h-screen flex flex-col font-sans">
+
+<header class="border-b border-white/10 bg-[#12100e]/90 backdrop-blur-md sticky top-0 z-50">
+  <div class="max-w-6xl mx-auto px-6 py-2.5 flex items-center justify-between">
+    <a href="index.html" class="brand-logo text-xl font-serif text-stone-100 font-bold">Bean <span class="text-[#d97706]">Boutique</span></a>
+    
+    <!-- Desktop Navigation (Hidden on Mobile) -->
+    <nav class="hidden md:flex items-center space-x-6 text-sm">
+      <a href="index.html" class="text-stone-400 hover:text-stone-200 transition-colors">Home</a>
+      <a href="menu.html" class="text-stone-400 hover:text-stone-200 transition-colors">Menu</a>
+      <a href="equipment.html" class="text-stone-400 hover:text-stone-200 transition-colors">Equipment</a>
+      <a href="offers.html" class="text-stone-400 hover:text-stone-200 transition-colors">Offers</a>
+      <a href="location.html" class="text-stone-400 hover:text-stone-200 transition-colors">Locations</a>
+      <a href="checkout.html" class="text-stone-400 hover:text-stone-200 transition-colors">Payment</a>
+      <a href="contact.html" class="text-stone-400 hover:text-stone-200 transition-colors">Contact Us</a>
+      <a href="events.html" class="text-[#d97706] font-semibold">Events</a>
+    </nav>
+
+    <!-- Header Actions (Cart & Mobile Menu Button) -->
+    <div class="flex items-center gap-4">
+      <button id="open-cart-btn" class="relative p-2 text-stone-300 hover:text-white transition-colors" aria-label="Open Cart">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
+        </svg>
+        <span id="cart-badge" class="absolute -top-1 -right-1 bg-[#d97706] text-stone-950 font-bold text-xs w-5 h-5 rounded-full flex items-center justify-center">0</span>
+      </button>
+
+      <!-- Mobile Hamburger Button -->
+      <button id="mobile-menu-btn" class="md:hidden p-2 text-stone-300 hover:text-white focus:outline-none" aria-label="Toggle Menu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Dropdown Menu (Hidden by default) -->
+  <div id="mobile-menu" class="hidden md:hidden bg-[#1c1917] border-b border-white/10 px-6 py-4 space-y-3">
+    <a href="index.html" class="block text-stone-300 hover:text-[#d97706] text-sm py-1">Home</a>
+    <a href="menu.html" class="block text-stone-300 hover:text-[#d97706] text-sm py-1">Menu</a>
+    <a href="equipment.html" class="block text-stone-300 hover:text-[#d97706] text-sm py-1">Equipment</a>
+    <a href="offers.html" class="block text-stone-300 hover:text-[#d97706] text-sm py-1">Offers</a>
+    <a href="location.html" class="block text-stone-300 hover:text-[#d97706] text-sm py-1">Locations</a>
+    <a href="checkout.html" class="block text-stone-300 hover:text-[#d97706] text-sm py-1">Payment</a>
+    <a href="contact.html" class="block text-stone-300 hover:text-[#d97706] text-sm py-1">Contact Us</a>
+    <a href="events.html" class="block text-[#d97706] font-semibold text-sm py-1">Events</a>
+  </div>
+</header>
+
+  <!-- Main Content -->
+  <main class="flex-1 max-w-6xl mx-auto px-6 py-12 w-full">
+    <div class="text-center mb-12">
+      <h1 class="text-4xl md:text-5xl font-serif text-stone-100 mb-4">Upcoming Events &amp; Gatherings</h1>
+      <p class="text-stone-400 max-w-xl mx-auto text-sm md:text-base">
+        Join us for exclusive cupping sessions, barista masterclasses, and live acoustic evenings at Bean Boutique.
+      </p>
+    </div>
+
+    <!-- Events Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+      <!-- Event Card 1 -->
+      <div class="bg-[#1c1917] rounded-2xl border border-white/10 overflow-hidden flex flex-col">
+        <img src="images/cupping%20session.png" alt="Coffee Cupping" class="w-full h-48 object-cover">
+        <div class="p-6 flex-1 flex flex-col justify-between">
+          <div>
+            <span class="text-xs font-bold text-amber-500 uppercase tracking-widest">Oct 12 &bull; 10:00 AM</span>
+            <h2 class="text-xl font-serif text-stone-100 mt-2 mb-3">Single-Origin Cupping Session</h2>
+            <p class="text-stone-400 text-sm leading-relaxed mb-6">
+              Taste and evaluate rare micro-lot beans from Ethiopia, Colombia, and Kenya with our Head Roaster.
+            </p>
+          </div>
+          <a href="contact.html?event=cupping" class="block text-center w-full bg-[#d97706] hover:bg-amber-600 text-stone-950 font-bold py-2.5 rounded-xl text-xs uppercase tracking-wider transition-colors">
+            Reserve a Spot ($15)
+          </a>
+        </div>
+      </div>
+
+      <!-- Event Card 2 -->
+      <div class="bg-[#1c1917] rounded-2xl border border-white/10 overflow-hidden flex flex-col">
+        <img src="images/latte%20art.png" alt="Latte Art Workshop" class="w-full h-48 object-cover">
+        <div class="p-6 flex-1 flex flex-col justify-between">
+          <div>
+            <span class="text-xs font-bold text-amber-500 uppercase tracking-widest">Oct 20 &bull; 2:00 PM</span>
+            <h2 class="text-xl font-serif text-stone-100 mt-2 mb-3">Latte Art Masterclass</h2>
+            <p class="text-stone-400 text-sm leading-relaxed mb-6">
+              Learn milk steaming techniques and pour hearts, rosettas, and tulips with hands-on espresso machine practice.
+            </p>
+          </div>
+          <a href="contact.html?event=latte-art" class="block text-center w-full bg-[#d97706] hover:bg-amber-600 text-stone-950 font-bold py-2.5 rounded-xl text-xs uppercase tracking-wider transition-colors">
+            Reserve a Spot ($35)
+          </a>
+        </div>
+      </div>
+
+      <!-- Event Card 3 -->
+      <div class="bg-[#1c1917] rounded-2xl border border-white/10 overflow-hidden flex flex-col">
+        <img src="images/Acoustic%20Lounge%20&amp;%20Filter%20Bar.png" alt="Acoustic Night" class="w-full h-48 object-cover">
+        <div class="p-6 flex-1 flex flex-col justify-between">
+          <div>
+            <span class="text-xs font-bold text-amber-500 uppercase tracking-widest">Nov 03 &bull; 6:30 PM</span>
+            <h2 class="text-xl font-serif text-stone-100 mt-2 mb-3">Acoustic Lounge &amp; Filter Bar</h2>
+            <p class="text-stone-400 text-sm leading-relaxed mb-6">
+              Unwind with live local indie music, signature cold brews, and fresh evening pastries at our flagship boutique.
+            </p>
+          </div>
+          <a href="contact.html?event=acoustic" class="block text-center w-full bg-[#d97706] hover:bg-amber-600 text-stone-950 font-bold py-2.5 rounded-xl text-xs uppercase tracking-wider transition-colors">
+            Free Entry (RSVP)
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-white/10 py-6 text-center text-xs text-stone-500">
+    <p>&copy; 2026 Bean Boutique Coffee Roasters. All rights reserved.</p>
+  </footer>
+
+  <!-- Main JavaScript File -->
+  <script src="js/main.js"></script>
+</body>
+</html>

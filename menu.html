@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bean Boutique - Menu</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-[#12100e] text-stone-200 min-h-screen flex flex-col">
+
+<header class="border-b border-white/10 bg-[#12100e]/90 backdrop-blur-md sticky top-0 z-50">
+  <div class="max-w-6xl mx-auto px-6 py-2.5 flex items-center justify-between">
+    <a href="index.html" class="brand-logo text-xl font-serif text-stone-100 font-bold">Bean <span class="text-[#d97706]">Boutique</span></a>
+    
+    <!-- Desktop Navigation (Hidden on Mobile) -->
+    <nav class="hidden md:flex items-center space-x-6 text-sm">
+      <a href="index.html" class="text-stone-400 hover:text-stone-200 transition-colors">Home</a>
+      <a href="menu.html" class="text-[#d97706] font-semibold">Menu</a>
+      <a href="equipment.html" class="text-stone-400 hover:text-stone-200 transition-colors">Equipment</a>
+      <a href="offers.html" class="text-stone-400 hover:text-stone-200 transition-colors">Offers</a>
+      <a href="location.html" class="text-stone-400 hover:text-stone-200 transition-colors">Locations</a>
+      <a href="checkout.html" class="text-stone-400 hover:text-stone-200 transition-colors">Payment</a>
+      <a href="contact.html" class="text-stone-400 hover:text-stone-200 transition-colors">Contact Us</a>
+      <a href="events.html" class="text-stone-400 hover:text-stone-200 transition-colors">Events</a>
+    </nav>
+
+    <!-- Header Actions (Cart & Mobile Menu Button) -->
+    <div class="flex items-center gap-4">
+      <button id="open-cart-btn" class="relative p-2 text-stone-300 hover:text-white transition-colors" aria-label="Open Cart">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
+        </svg>
+        <span id="cart-badge" class="absolute -top-1 -right-1 bg-[#d97706] text-stone-950 font-bold text-xs w-5 h-5 rounded-full flex items-center justify-center">0</span>
+      </button>
+
+      <!-- Mobile Hamburger Button -->
+      <button id="mobile-menu-btn" class="md:hidden p-2 text-stone-300 hover:text-white focus:outline-none" aria-label="Toggle Menu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Dropdown Menu (Hidden by default) -->
+  <div id="mobile-menu" class="hidden md:hidden bg-[#1c1917] border-b border-white/10 px-6 py-4 space-y-3">
+    <a href="index.html" class="block text-stone-300 hover:text-[#d97706] text-sm py-1">Home</a>
+    <a href="menu.html" class="block text-[#d97706] font-semibold text-sm py-1">Menu</a>
+    <a href="equipment.html" class="block text-stone-300 hover:text-[#d97706] text-sm py-1">Equipment</a>
+    <a href="offers.html" class="block text-stone-300 hover:text-[#d97706] text-sm py-1">Offers</a>
+    <a href="location.html" class="block text-stone-300 hover:text-[#d97706] text-sm py-1">Locations</a>
+    <a href="checkout.html" class="block text-stone-300 hover:text-[#d97706] text-sm py-1">Payment</a>
+    <a href="contact.html" class="block text-stone-300 hover:text-[#d97706] text-sm py-1">Contact Us</a>
+    <a href="events.html" class="block text-stone-300 hover:text-[#d97706] text-sm py-1">Events</a>
+  </div>
+</header>
+
+  <!-- Main Content (pt-24 prevents navbar overlap) -->
+  <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-8">
+    <h1 class="sr-only">Our Artisanal Menu</h1>
+
+    <!-- Controls Section -->
+    <div class="mb-8 space-y-6">
+      <div class="flex flex-col md:flex-row gap-4 justify-between items-stretch md:items-center">
+        <!-- Search Input -->
+        <div class="relative flex-1 max-w-md">
+          <input id="search-input" type="text" placeholder="Search menu, flavors, tags..." class="w-full bg-[#1c1917] border border-white/10 rounded-xl px-4 py-3 pl-11 text-sm text-stone-100 placeholder-stone-500 focus:outline-none focus:border-[#d97706] transition-colors">
+          <svg class="w-5 h-5 absolute left-3.5 top-3.5 text-stone-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+          </svg>
+          <button id="clear-search" class="hidden absolute right-3.5 top-3.5 text-stone-500 hover:text-stone-300">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+          </button>
+        </div>
+
+        <!-- Filter Metrics -->
+        <div class="text-xs text-stone-400 flex items-center justify-between md:justify-end gap-4">
+          <span id="filter-indicator">Filter: All</span>
+          <span>Showing <strong id="item-count" class="text-stone-200">0</strong> items</span>
+        </div>
+      </div>
+
+      <!-- Category Filter Pills -->
+      <div class="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none">
+        <button data-category="all" class="category-btn bg-[#d97706] text-stone-950 font-semibold px-4 py-2 rounded-xl text-xs tracking-wider uppercase border border-[#d97706] transition-all shrink-0">All</button>
+        <button data-category="espresso" class="category-btn bg-[#1c1917] text-stone-400 hover:text-stone-200 font-semibold px-4 py-2 rounded-xl text-xs tracking-wider uppercase border border-white/10 transition-all shrink-0">Espresso</button>
+        <button data-category="cold" class="category-btn bg-[#1c1917] text-stone-400 hover:text-stone-200 font-semibold px-4 py-2 rounded-xl text-xs tracking-wider uppercase border border-white/10 transition-all shrink-0">Cold Brew</button>
+        <button data-category="tea" class="category-btn bg-[#1c1917] text-stone-400 hover:text-stone-200 font-semibold px-4 py-2 rounded-xl text-xs tracking-wider uppercase border border-white/10 transition-all shrink-0">Tea &amp; Artisanal</button>
+        <button data-category="bakery" class="category-btn bg-[#1c1917] text-stone-400 hover:text-stone-200 font-semibold px-4 py-2 rounded-xl text-xs tracking-wider uppercase border border-white/10 transition-all shrink-0">Bakery</button>
+        <button data-category="beans" class="category-btn bg-[#1c1917] text-stone-400 hover:text-stone-200 font-semibold px-4 py-2 rounded-xl text-xs tracking-wider uppercase border border-white/10 transition-all shrink-0">Whole Beans</button>
+      </div>
+    </div>
+
+    <!-- Empty State -->
+    <div id="empty-state" class="hidden py-16 text-center">
+      <p class="text-stone-400 text-lg font-serif-boutique mb-4">No menu items match your search criteria.</p>
+      <button id="reset-filters-btn" class="bg-[#1c1917] border border-white/10 text-stone-300 hover:text-white px-4 py-2 rounded-xl text-xs font-semibold uppercase tracking-wider">Reset Filters</button>
+    </div>
+
+    <!-- Menu Grid -->
+    <div id="menu-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+  </main>
+
+  <!-- Toast Notification Container -->
+  <div id="toast-container" class="fixed bottom-6 right-6 z-50 flex flex-col gap-2 pointer-events-none"></div>
+
+  <!-- Cart Drawer Overlay -->
+  <div id="cart-drawer-overlay" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 opacity-0 pointer-events-none transition-opacity duration-300">
+    <!-- Drawer Panel -->
+    <aside id="cart-drawer" class="fixed top-0 right-0 bottom-0 w-full max-w-md bg-[#161412] border-l border-white/10 z-50 flex flex-col translate-x-full transition-transform duration-300 ease-out">
+      <!-- Drawer Header -->
+      <div class="p-6 border-b border-white/10 flex items-center justify-between">
+        <h2 class="font-serif-boutique text-xl text-stone-100 font-semibold">Your Order Summary</h2>
+        <button id="close-cart-btn" class="p-2 text-stone-400 hover:text-white transition-colors">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+
+      <!-- Drawer Content -->
+      <div class="flex-grow overflow-y-auto p-6 space-y-4">
+        <div id="cart-empty-view" class="h-full flex flex-col items-center justify-center text-center py-12">
+          <svg class="w-12 h-12 text-stone-600 mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
+          <p class="text-stone-400 text-sm">Your cart is currently empty.</p>
+        </div>
+        <div id="cart-items-container" class="space-y-3"></div>
+      </div>
+
+      <!-- Drawer Footer -->
+      <div id="cart-footer" class="hidden p-6 border-t border-white/10 bg-[#12100e] space-y-4">
+        <div class="space-y-1.5 text-xs text-stone-400">
+          <div class="flex justify-between"><span>Subtotal</span><span id="cart-subtotal" class="text-stone-200">$0.00</span></div>
+          <div class="flex justify-between"><span>Estimated Tax (8.875%)</span><span id="cart-tax" class="text-stone-200">$0.00</span></div>
+          <div class="flex justify-between text-sm font-semibold text-stone-100 pt-2 border-t border-white/5"><span>Total</span><span id="cart-total" class="text-[#d97706]">$0.00</span></div>
+        </div>
+
+        <button id="checkout-btn" class="w-full bg-[#d97706] hover:bg-[#b45309] text-stone-950 font-semibold py-3 px-4 rounded-xl text-xs uppercase tracking-wider transition-colors">
+          Proceed to Order
+        </button>
+      </div>
+    </aside>
+  </div>
+<script src="js/main.js"></script>
+<script src="js/menu.js"></script>
+</body>
+</html>
